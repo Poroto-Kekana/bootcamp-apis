@@ -7,31 +7,13 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="./javascript.js/widgets.js"></script>
     <title>Document</title>
 </head>
 <body>
     <h1>API WIDGETS</h1>
 
-    <div x-data="{
-        sentence : '',
-        longestWord : '',
-        shortestWord : '',
-        sum : '',
-        inspectSentence() {
-            axios
-                .get(`/api/word_game?sentence=${this.sentence}`)
-                .then((result) => {
-                    //console.log(result.data)
-
-                    this.longestWord = result.data.longestWord;
-
-                    this.shortestWord = result.data.shortestWord;
-
-                    this.sum = result.data.sum;
-                });
-
-        }
-    }">
+    <div x-data="wordGame">
 
     
         <div>
@@ -57,16 +39,5 @@
         </div>
 
     </div>
-
-    <div>
-        <div>
-            <input x-bind="" type="text">
-            
-        </div>
-    </div>
-
-
-   
-
 </body>
 </html>
